@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "3c1e84c6-6fd4-46c5-a990-e36ff036ced8",
+		"name": "Moderation API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46202234",
+		"_collection_link": "https://www.postman.com/anna-1442788/team/collection/409u3md/moderation-api?action=share&source=collection_link&creator=46202234"
+	},
+	"item": [
+		{
+			"name": "Login as Moderator",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"qaengineer1811@gmail.com\",\n  \"password\": \"08111988_Anna\"\n}"
+				},
+				"url": {
+					"raw": "https://be-grabber.onrender.com/api/user/login/",
+					"protocol": "https",
+					"host": [
+						"be-grabber",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Pending Items",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://be-grabber.onrender.com/api/ads/moderation/",
+					"protocol": "https",
+					"host": [
+						"be-grabber",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"ads",
+						"moderation",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Single Item",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": {
+					"raw": "https://be-grabber.onrender.com/api/ads/3010/",
+					"protocol": "https",
+					"host": [
+						"be-grabber",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"ads",
+						"3010",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Approve Item",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"status\": \"approved\",\n  \"comment\": \"Все гаразд, публікуємо\"\n}"
+				},
+				"url": {
+					"raw": "https://be-grabber.onrender.com/api/ads/3010/approve/",
+					"protocol": "https",
+					"host": [
+						"be-grabber",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"ads",
+						"3010",
+						"approve",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reject Item",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"status\": \"rejected\",\n  \"rejection_reason\": \"Невірна категорія, виправте опис.\"\n}"
+				},
+				"url": {
+					"raw": "https://be-grabber.onrender.com/api/ads/3010/reject/",
+					"protocol": "https",
+					"host": [
+						"be-grabber",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"ads",
+						"3010",
+						"reject",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}

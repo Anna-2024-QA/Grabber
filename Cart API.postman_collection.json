@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "16478d02-c655-4c7c-94e3-b16c77516e9b",
+		"name": "Cart API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46202234",
+		"_collection_link": "https://www.postman.com/anna-1442788/team/collection/v5y2akl/cart-api?action=share&source=collection_link&creator=46202234"
+	},
+	"item": [
+		{
+			"name": "Add to Cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "productId",
+						"value": "3010",
+						"type": "text"
+					},
+					{
+						"key": "quantity",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productId\": 3010,\r\n  \"quantity\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://be-grabber-op69.onrender.com/api/user/cart/add",
+					"protocol": "https",
+					"host": [
+						"be-grabber-op69",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"cart",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove from Cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productId\": 3010\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://be-grabber-op69.onrender.com/api/user/cart/remove",
+					"protocol": "https",
+					"host": [
+						"be-grabber-op69",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"cart",
+						"remove"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

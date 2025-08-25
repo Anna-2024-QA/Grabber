@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "1b871b0e-2cb4-4733-a80c-98345286676d",
+		"name": "API for subscribing to news",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46202234",
+		"_collection_link": "https://www.postman.com/anna-1442788/team/collection/yc7jhhf/api-for-subscribing-to-news?action=share&source=collection_link&creator=46202234"
+	},
+	"item": [
+		{
+			"name": "Subscribe with Valid Email",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"qaengineer1811@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://be-grabber-op69.onrender.com/api/subscribe/",
+					"protocol": "https",
+					"host": [
+						"be-grabber-op69",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"subscribe",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subscribe with Invalid Email",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"invalid-email\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://be-grabber-op69.onrender.com/api/subscribe/",
+					"protocol": "https",
+					"host": [
+						"be-grabber-op69",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"subscribe",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subscribe with Empty Email",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://be-grabber-op69.onrender.com/api/subscribe/",
+					"protocol": "https",
+					"host": [
+						"be-grabber-op69",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"subscribe",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subscribe Already Subscribed Email",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"user@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://be-grabber-op69.onrender.com/api/subscribe/",
+					"protocol": "https",
+					"host": [
+						"be-grabber-op69",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"subscribe",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Successful Subscription",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://be-grabber-op69.onrender.com/api/get_subscribers/",
+					"protocol": "https",
+					"host": [
+						"be-grabber-op69",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"get_subscribers",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

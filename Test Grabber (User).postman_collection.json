@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "f101935f-3a8b-45a4-8832-e34b2ce07360",
+		"name": "Test Grabber (User)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46202234",
+		"_collection_link": "https://www.postman.com/anna-1442788/team/collection/5g6zde1/test-grabber-user?action=share&source=collection_link&creator=46202234"
+	},
+	"item": [
+		{
+			"name": "Authorization",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"qaengineer1811@gmail.com\",\r\n  \"password\": \"08111988_Anna\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://be-grabber-op69.onrender.com/api/user/login/",
+					"protocol": "https",
+					"host": [
+						"be-grabber-op69",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Profile Image",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://be-grabber.onrender.com/api/user/delete-image-profile/",
+					"protocol": "https",
+					"host": [
+						"be-grabber",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"delete-image-profile",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload-profile-image",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "sthcOBnio/баннер.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://be-grabber.onrender.com/api/user/upload-profile-image/",
+					"protocol": "https",
+					"host": [
+						"be-grabber",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"upload-profile-image",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Phone_number (false)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"show_phone\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://be-grabber.onrender.com/api/user/profile/",
+					"protocol": "https",
+					"host": [
+						"be-grabber",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"profile",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Phone_number (true)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "https://be-grabber.onrender.com/api/user/profile/",
+					"protocol": "https",
+					"host": [
+						"be-grabber",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"profile",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://be-grabber.onrender.com/api/user/profile/",
+					"protocol": "https",
+					"host": [
+						"be-grabber",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"profile",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

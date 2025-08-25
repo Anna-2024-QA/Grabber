@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "944a9975-1b8a-4ae7-a8ea-9ecea5c7fa63",
+		"name": "Image Storage API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46202234",
+		"_collection_link": "https://www.postman.com/anna-1442788/team/collection/4o2nq8i/image-storage-api?action=share&source=collection_link&creator=46202234"
+	},
+	"item": [
+		{
+			"name": "Upload Image",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "ad_id",
+						"value": "3010",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "image",
+						"value": "одяг",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "mGCZ9vcbM/послуги.jpg"
+						},
+						{
+							"key": "ad_id",
+							"value": "3010",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://be-grabber-op69.onrender.com/api/listings/upload-image/",
+					"protocol": "https",
+					"host": [
+						"be-grabber-op69",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"listings",
+						"upload-image",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Image",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "ad_id",
+							"value": "3010",
+							"type": "text"
+						},
+						{
+							"key": "image_url",
+							"value": "https://storage.googleapis.com/grubber-media/uploads/%D0%BF%D0%BE%D1%81%D0%BB%D1%83%D0%B3%D0%B8.jpg",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://be-grabber-op69.onrender.com/api/listings/images/delete/",
+					"protocol": "https",
+					"host": [
+						"be-grabber-op69",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"listings",
+						"images",
+						"delete",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

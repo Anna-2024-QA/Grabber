@@ -1,0 +1,283 @@
+{
+	"info": {
+		"_postman_id": "56119b1e-bc27-4879-b7e9-0aec714d31d7",
+		"name": "Test Grabber (Ad)",
+		"description": "Колекція запитів для API оголошень з полями: заголовок, опис, категорія, зображення, ціна.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46202234",
+		"_collection_link": "https://www.postman.com/anna-1442788/team/collection/i7u7otm/test-grabber-ad?action=share&source=collection_link&creator=46202234"
+	},
+	"item": [
+		{
+			"name": "Create Ad",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Продам смартфон",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Стан ідеальний, користувалися місяць",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "Декор",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "8000",
+							"type": "text"
+						},
+						{
+							"key": "images",
+							"type": "file",
+							"src": "QnjAORNPI/декор.jpg"
+						},
+						{
+							"key": "status",
+							"value": "draft",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://be-grabber-op69.onrender.com/api/listings/create/",
+					"protocol": "https",
+					"host": [
+						"be-grabber-op69",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"listings",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Ads",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://be-grabber-op69.onrender.com/api/listings/",
+					"protocol": "https",
+					"host": [
+						"be-grabber-op69",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"listings",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Ad by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://be-grabber-op69.onrender.com/api/listings/3002/",
+					"protocol": "https",
+					"host": [
+						"be-grabber-op69",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"listings",
+						"3002",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Ad",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Автомобіль",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "45",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "в ідеальному стані",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "draft",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "images",
+							"type": "file",
+							"src": "SbiR4ITMP/баннер.png",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "ad_id",
+							"value": "3019",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://be-grabber-op69.onrender.com/api/listings/3019/update/",
+					"protocol": "https",
+					"host": [
+						"be-grabber-op69",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"listings",
+						"3019",
+						"update",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Ad",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "base_url",
+						"value": "'https://be-grabber.onrender.com/api/ads/create/'",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://be-grabber-op69.onrender.com/api/listings/3019/delete/",
+					"protocol": "https",
+					"host": [
+						"be-grabber-op69",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"listings",
+						"3019",
+						"delete",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Ad with Invalid ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://be-grabber-op69.onrender.com/api/listings/301/",
+					"protocol": "https",
+					"host": [
+						"be-grabber-op69",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"listings",
+						"301",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://api.example.com"
+		}
+	]
+}

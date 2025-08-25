@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "1e46315c-ef36-4452-884e-8d17fa97458d",
+		"name": "Filters Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46202234",
+		"_collection_link": "https://www.postman.com/anna-1442788/team/collection/ch6rpv9/filters-testing?action=share&source=collection_link&creator=46202234"
+	},
+	"item": [
+		{
+			"name": "Get All Items",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://be-grabber-op69.onrender.com/api/listings/",
+					"protocol": "https",
+					"host": [
+						"be-grabber-op69",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"listings",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter by Category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://be-grabber-op69.onrender.com/api/listings/?search=%D0%BC%D0%B5%D0%B4",
+					"protocol": "https",
+					"host": [
+						"be-grabber-op69",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"listings",
+						""
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "%D0%BC%D0%B5%D0%B4"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

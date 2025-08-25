@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "eb469f3a-5e38-4894-b238-99e63bd01f4f",
+		"name": "Subcategories API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46202234",
+		"_collection_link": "https://www.postman.com/anna-1442788/team/collection/ucyo9km/subcategories-api?action=share&source=collection_link&creator=46202234"
+	},
+	"item": [
+		{
+			"name": "Get All Subcategories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://be-grabber-op69.onrender.com/api/listings/subcategories/",
+					"protocol": "https",
+					"host": [
+						"be-grabber-op69",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"listings",
+						"subcategories",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

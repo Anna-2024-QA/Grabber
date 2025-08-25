@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "615deeb0-07b1-428a-995a-397a0d3472e1",
+		"name": "View Counter Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46202234",
+		"_collection_link": "https://www.postman.com/anna-1442788/team/collection/uwafoed/view-counter-testing?action=share&source=collection_link&creator=46202234"
+	},
+	"item": [
+		{
+			"name": "Get Current View Count",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://be-grabber-op69.onrender.com/api/listings/",
+					"protocol": "https",
+					"host": [
+						"be-grabber-op69",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"listings",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Increment View Count",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://be-grabber-op69.onrender.com/api/listings/3017/",
+					"protocol": "https",
+					"host": [
+						"be-grabber-op69",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"listings",
+						"3017",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Updated View Count",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://be-grabber-op69.onrender.com/api/listings/",
+					"protocol": "https",
+					"host": [
+						"be-grabber-op69",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"listings",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
